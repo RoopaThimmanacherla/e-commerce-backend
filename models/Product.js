@@ -29,7 +29,23 @@ price:{
     }
 
 },
+stock:{
+  type: DataTypes.INTEGER,
+  allowNulls:false,
+  validate:{
+    isNumeric: true,
+  },
+  defaultValue: 10,
+},
 
+category_id:{
+  type: DataTypes.INTEGER,
+  references:{
+    model:'category',
+    key:'id',
+  } ,
+
+},
   },
   {
     sequelize,
@@ -42,29 +58,3 @@ price:{
 
 module.exports = Product;
 
-
-
-
-// price
-
-// Decimal
-
-// Doesn't allow null values
-
-// Validates that the value is a decimal
-
-// stock
-
-// Integer
-
-// Doesn't allow null values
-
-// Set a default value of 10
-
-// Validates that the value is numeric
-
-// category_id
-
-// Integer
-
-// References the category model's id
