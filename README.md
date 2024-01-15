@@ -3,17 +3,17 @@
 
 Code syncs Sequelize models to a MySQL database on the server start, includes column definitions for all four models and model associations, and provides the following GET, POST, PUT, and DELETE routes:
 
-# Category
+## Category
 * GET all categories, GET a single category by ID, POST(create) a new category, PUT(update) and existing category by ID, and DELETE an existing category by ID.
 
-# Tag
+## Tag
 
 * GET all tags, GET a single tag by ID, POST(create) a new tag, PUT(update) an existing tag by ID, and DELETE an existing tag by ID.
 
-# Product (including ProductTag)
+## Product (including ProductTag)
 * GET all products, GET products by ID, and DELETE products by ID. POST(create) and PUT(update) product routes were provided in starter code.
 
-* Watch video to see application set-up in VSCode and demonstration all API routes' endpoints using Insomnia:
+* Watch (video)[https://drive.google.com/file/d/1TzRV1ZoChC8lf9vxIX5F3B-s67bIddpy/view?usp=sharing] to see application set-up in VSCode and demonstration all API routes' endpoints using Insomnia:
 
 
 # Installation
@@ -51,6 +51,9 @@ DB_PW='YOUR PASSWORD'
 * http://localhost:3001/api/categories/:id
 * http://localhost:3001/api/tags/:id
 * http://localhost:3001/api/products/:id
+
+
+* [Link to my github profile](https://github.com/RoopaThimmanacherla/e-commerce-backend)
 
 
 

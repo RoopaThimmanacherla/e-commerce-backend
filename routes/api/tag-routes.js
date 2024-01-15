@@ -99,8 +99,8 @@ router.put('/:id', (req, res) => {
         const tagProductsToRemove =productTags.filter(({product_id})=>!req.body.productIds.includes(product_id))
         .map(({id})=>id);
 return Promise.all([
-  productTags.destroy({where:{id:tagProductsToRemove}}),
-  productTags.Create(newTagProducts),
+  ProductTag.destroy({where:{id:tagProductsToRemove}}),
+  ProductTag.bulkCreate(newTagProducts)
 ]);
 
       });
