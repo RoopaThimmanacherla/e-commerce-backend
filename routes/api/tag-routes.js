@@ -44,17 +44,21 @@ req.body should look like this...
 */
 Tag.create(req.body)
 .then((tag)=>{
+  console.log(tag,req.body.productIds);
   //if there are poduts for the tags then we need to create a pairing to bulk create in the ProductTag model
   if(req.body.productIds.length){
     const productTagIdArr=req.body.productIds.map((productId)=>{
-      return{
+      const productArr={
       tag_id:tag.id,
-      productId
+      product_id:productId
       };
+      ProductTag.create(productArr)
+      .then((prodcttag)=>{console.log(prodcttag)});
     });
-    return ProductTag.bulkCreate(tag);
+    return tag;
+   // return ProductTag.bulkCreate(productTagIdArr);
   }
-res.status(200).json(tag);
+//res.status(200).json(tag);
 })
 .then((productTagIds)=>res.status(200).json(productTagIds))
 .catch((err)=>{
@@ -65,7 +69,7 @@ res.status(200).json(tag);
 });
 
 
-  // update a tag's name by its `id` value
+  //update a tag's name by its `id` value
 
 router.put('/:id', (req, res) => {
 
@@ -85,7 +89,7 @@ router.put('/:id', (req, res) => {
         .map((productId)=>{
           return{
             tag_id:req.body.id,
-            productId,
+            product_id:productId,
           };
         });
         
@@ -96,7 +100,7 @@ router.put('/:id', (req, res) => {
         .map(({id})=>id);
 return Promise.all([
   productTags.destroy({where:{id:tagProductsToRemove}}),
-  productTags.bulkCreate(newTagProducts),
+  productTags.Create(newTagProducts),
 ]);
 
       });

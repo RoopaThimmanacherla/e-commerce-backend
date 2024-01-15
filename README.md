@@ -13,6 +13,48 @@ Code syncs Sequelize models to a MySQL database on the server start, includes co
 # Product (including ProductTag)
 * GET all products, GET products by ID, and DELETE products by ID. POST(create) and PUT(update) product routes were provided in starter code.
 
+* Watch video to see application set-up in VSCode and demonstration all API routes' endpoints using Insomnia:
+
+
+# Installation
+* Check if you have Node.js installed by typing node -v in your command line. If node is not installed, visit the Node.js website to install.
+* Next, clone this project repository to your computer.
+* Use the command npm i to install dependencies.
+* Create a file in the root directory titled .env and include database name and personal MySQL login information:
+
+DB_NAME='YOUR DATABASE NAME'
+DB_USER='YOUR USERNAME'
+DB_PW='YOUR PASSWORD'
+
+* Open MySQL with command mysql -u root -p and enter your personal MySQL password.
+
+* Create databse with command source schema.sql. Log out of MySQL with command \q.
+
+* Seed database with command npm run seed.
+
+# Usage
+
+* Start server with command npm start.
+
+* Alternatively, start server with Nodemon (and restart server automatically when making changes to code) with command npm run watch.
+
+* Access API routes with Insomnia using the following endpoints:
+
+* GET (ALL), POST(CREATE)
+
+* http://localhost:3001/api/categories/
+* http://localhost:3001/api/tags/
+* http://localhost:3001/api/products/
+
+* GET (BY ID), PUT(UPDATE), DELETE
+
+* http://localhost:3001/api/categories/:id
+* http://localhost:3001/api/tags/:id
+* http://localhost:3001/api/products/:id
+
+
+
+
 
 
 
