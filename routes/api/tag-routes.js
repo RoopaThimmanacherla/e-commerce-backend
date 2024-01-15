@@ -52,7 +52,7 @@ Tag.create(req.body)
       productId
       };
     });
-    return ProductTag.bulkCreate(productTagIdArr);
+    return ProductTag.bulkCreate(tag);
   }
 res.status(200).json(tag);
 })
