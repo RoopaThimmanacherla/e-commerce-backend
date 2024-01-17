@@ -13,7 +13,7 @@ Code syncs Sequelize models to a MySQL database on the server start, includes co
 ## Product (including ProductTag)
 * GET all products, GET products by ID, and DELETE products by ID. POST(create) and PUT(update) product routes were provided in starter code.
 
-* Watch (video)[https://drive.google.com/file/d/1TzRV1ZoChC8lf9vxIX5F3B-s67bIddpy/view?usp=sharing] to see application set-up in VSCode and demonstration all API routes' endpoints using Insomnia:
+* Watch [Walkthrough video](https://drive.google.com/file/d/1TzRV1ZoChC8lf9vxIX5F3B-s67bIddpy/view?usp=sharing) to see application set-up in VSCode and demonstration all API routes' endpoints using Insomnia:
 
 
 # Installation
