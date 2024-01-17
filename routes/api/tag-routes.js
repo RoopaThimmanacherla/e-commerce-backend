@@ -47,16 +47,16 @@ Tag.create(req.body)
   console.log(tag,req.body.productIds);
   //if there are poduts for the tags then we need to create a pairing to bulk create in the ProductTag model
   if(req.body.productIds.length){
-    const productTagIdArr=req.body.productIds.map((productId)=>{
-      const productArr={
+    const productTagIdArr=req.body.productIds.map((productId)=>({
       tag_id:tag.id,
       product_id:productId
-      };
-      ProductTag.create(productArr)
-      .then((prodcttag)=>{console.log(prodcttag)});
-    });
-    return tag;
-   // return ProductTag.bulkCreate(productTagIdArr);
+      
+      // ProductTag.create(productArr)
+      // .then((prodcttag)=>{console.log(prodcttag)});
+    }));
+    console.log(productTagIdArr);
+    //return tag;
+   return ProductTag.bulkCreate(productTagIdArr);
   }
 //res.status(200).json(tag);
 })
@@ -88,7 +88,7 @@ router.put('/:id', (req, res) => {
         .filter((productId)=>!tagProductIds.includes(productId))
         .map((productId)=>{
           return{
-            tag_id:req.body.id,
+            tag_id:req.params.id,
             product_id:productId,
           };
         });
